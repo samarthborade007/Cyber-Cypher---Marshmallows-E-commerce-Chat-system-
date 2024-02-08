@@ -1,0 +1,167 @@
+
+
+.app {
+    display: flex;
+    background-color: #1e1f22;
+    height: 800px;
+    width: 1400px;
+    flex-direction: row;
+    
+    border-radius: 25px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* horizontal-offset vertical-offset blur-radius spread-radius color */
+
+    
+}
+.mainblock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /*background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%); */
+    background-color: #49505bc9; 
+    background-size: 60px 60px;
+    background-position: -5px -5px;
+  
+  }
+  .innerchat{
+    width: 75%; 
+  background-color: #2b2d31; 
+  overflow-y: auto; 
+  margin-left: auto;
+  margin-right: 20px; /* change to auto if you want middle display xd */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  max-height: 800px;
+  }
+  .input-container{
+    margin-top: 580px;
+    position: fixed;
+    color: #ffffff;
+  
+  }
+  .responsebox{
+    background-color: #0073b100;
+  }
+  .sender-area {
+    background-color: #34354100;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    border-radius: 8px;
+  }
+  .send-input {
+    outline: none;
+    display: flex;
+    border: none;
+    background: none;
+    height: 40px;
+    width: 100%;
+    border-radius: 7px;
+    background: none;
+    color: white;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  
+  }
+  .send-img {
+    width: 30px;
+  }
+  .send-input::placeholder {
+    color: #ffffff;
+  }
+  .input-place {
+    display: flex;
+    flex-direction: row;
+    margin-top: 35px;
+    margin-left: 135px;
+    align-items: center;
+    background-color: #424141;
+    border-radius: 7px;
+    height: 40px;
+    width: 800px;
+    gap: 5px;
+    border: 1px solid #2E2F3A;
+  }
+  .send {
+    width: 30px;
+    height: 30px;
+    background-color: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: flex-end;
+    
+  }
+
+  .agentdisplay {
+    color: aliceblue;
+
+  }
+  .agentdisplay {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    background-color: #2b2d31; /* Background color of the agent display */
+    padding: 10px; /* Or any other value for spacing inside the agent display */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    border-bottom: 2px solid #1e1f22; /* Blue border at the bottom */
+    position: sticky;
+
+  }
+  
+  .logoicon {
+    /* Adjust the size as needed */
+    width: 50px; /* Width of the logo container */
+    height: 50px; /* Height of the logo container */
+    margin-right: 10px; /* Add some space between the logo and the text */
+    border-radius: 50%; /* Makes the image round */
+    overflow: hidden; /* Ensures the image doesn't overflow the rounded corners */
+  }
+  
+  .logoicon img {
+    width: 100%; /* Ensure the image covers the logoicon area */
+    height: auto; /* Maintain the aspect ratio */
+  }
+  
+  .agent-info h2 {
+    margin: 0;
+    font-size: 1.25rem; /* Adjust the size as needed */
+    color: #ffffff; /* Text color */
+  }
+  
+  .agent-info p {
+    margin: 0;
+    color: #a9a9a9; /* Text color for the username */
+    font-size: 0.875rem; /* Adjust the size as needed */
+  }
+  
+  /* Further styling to match the layout */
+  .agent-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .chatcontainer {
+    flex-grow: 1;
+    border: 1px solid rgba(255, 255, 255, 0); /* Replace with your desired border color */
+    overflow-y: auto; /* Enable scrolling for overflow content */
+    background-color: rgba(255, 255, 255, 0); /* Replace with your desired background color */
+    margin: 20px; /* Adjust the margin as needed */
+    height: calc(100% - 170px); /* Adjust height as needed, subtracting double the margin */
+    width: calc(100% - 40px); /* Adjust width as needed, subtracting double the margin */
+    overflow-y: auto; /* Allows for scrolling within the container if content overflows */
+    box-sizing: border-box; /* Ensures padding and border are included in width/height calculation */
+  }
+  .chat-message {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #1e1f22; /* Dark background color */
+    color: #fffdfdaa; /* Light text color */
+    max-width: 80%; /* Max width to avoid overly wide messages */
+    word-wrap: break-word; /* Ensure long words do not overflow */
+    display: inline-block; /* Adjusts width based on content up to max-width */
+  }
+  
