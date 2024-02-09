@@ -36,7 +36,7 @@
     </ul>
     <h3>Setup and Installation</h3>
     <p><strong>Clone the Repository</strong></p>
-    <pre><code>git clone https://github.com/yourusername/fetch-fresh.git
+    <pre><code>git clone https://github.com/samarthborade007/Hackathon---DL.git
 cd fetch-fresh</code></pre>
     <p><strong>Set up the Backend (Django)</strong></p>
     <pre><code>cd backend
