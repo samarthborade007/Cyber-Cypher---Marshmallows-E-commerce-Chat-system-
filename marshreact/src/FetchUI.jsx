@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './fetch.css';
 import axios from 'axios';
+import { FaGear } from "react-icons/fa6";
+import { CiCircleInfo } from "react-icons/ci";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import fetchAILogo from './fetchailogo.jpg';
@@ -17,7 +19,22 @@ const Fetch = () => {
   const [isLoading, setIsLoading] = useState(false); // For loading status
   const [output, setOutput] = useState(''); // For storing API output
   const [threadId, setThreadId] = useState(null); // State to store thread ID
+  const [additionalData,setAdditionalData] = useState('');
+  /*
+  useEffect(() => {
+    // Fetch additional data from another API endpoint
+    const fetchAdditionalData = async () => {
+      try {
+        const response = await axios.get('https://api.openai.com/v1/chat/completions');
+        setAdditionalData(response.data); // Adjust based on the API response structure
+      } catch (error) {
+        console.error('Failed to fetch additional data:', error);
+      }
+    };
 
+    fetchAdditionalData();
+  }, []);
+*/
   // Function to call OpenAI API, adapted to use threads
   async function callOpenAIAPI() {
     setIsLoading(true); // Start loading indicator
@@ -57,7 +74,7 @@ const Fetch = () => {
       const data = response.data;
       if (data.choices && data.choices.length > 0) {
         setOutput(data.choices[0].message.content); // Update the result to show in the chat container
-        setResult(`AI Response: ${data.choices[0].message.content}`);
+        setResult(`Max AI: ${data.choices[0].message.content}`);
         if (!threadId) {
           setThreadId(data.choices[0].thread_id); // Save the thread ID for future requests
         }
@@ -80,76 +97,63 @@ const Fetch = () => {
   };
 
   return (
-    <div className="mainblock">
+    
+
+<div className="mainblock">
       <div className="app">
+        <FaGear className="icon-size"/>
+        <div className="anime">
+          {isLoading ? (
+            <div className="loader">
+              <div class="square" id="sq1"></div>
+    <div class="square" id="sq2"></div>
+    <div class="square" id="sq3"></div>
+    <div class="square" id="sq4"></div>
+    <div class="square" id="sq5"></div>
+    <div class="square" id="sq6"></div>
+    <div class="square" id="sq7"></div>
+    <div class="square" id="sq8"></div>
+    <div class="square" id="sq9"></div>
+  </div> 
+           
+          ) : (
+            additionalData.length > 0 && additionalData.map((item, index) => (
+              <div key={index}>{item.title}</div> // Ensure this maps to your data structure
+            ))
+          )}
+        </div>
         <div className="innerchat">
           <div className="agentdisplay">
             <div className="logoicon">
               <img src={fetchAILogo} alt="Agent Max Logo" />
+              <CiCircleInfo className="circle"/>
             </div>
             <div className="agent-info">
               <h2>Agent Max</h2>
               <p>@maxifetchai</p>
             </div>
           </div>
-
           <div className="chatcontainer">
-           
-          {!isLoading &&(
-              <div class="loader">
-              <div class="loader-square"></div>
-              <div class="loader-square"></div>
-              <div class="loader-square"></div>
-              <div class="loader-square"></div>
-              <div class="loader-square"></div>
-              <div class="loader-square"></div>
-              <div class="loader-square"></div>
-              </div>
-
-          )}
-
-            
-
-       
-             <div className="initial-message">
-              
-            <p>Hey There this is Agent Max from FetchAI Here to take your orders</p>
-
-            </div>
-           
-
-
-
-            </div>
             <form onSubmit={handleSubmit}>
               <div className="input-container">
-                <div className="sender-area">
-                  <div className="input-place">
-                    <input
-                      type="text"
-                      value={input}
-                      onChange={e => setInput(e.target.value)}
-                      placeholder="Enter your task"
-                      className="send-input"
-                    />
-                    <button type="submit" className="send">
-                    <svg className="send-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-          <path fill="#6B6C7B" d="M481.508,210.336L68.414,38.926c-17.403-7.222-37.064-4.045-51.309,8.287C2.86,59.547-3.098,78.551,1.558,96.808 L38.327,241h180.026c8.284,0,15.001,6.716,15.001,15.001c0,8.284-6.716,15.001-15.001,15.001H38.327L1.558,415.193 c-4.656,18.258,1.301,37.262,15.547,49.595c14.274,12.357,33.937,15.495,51.31,8.287l413.094-171.409 C500.317,293.862,512,276.364,512,256.001C512,235.638,500.317,218.139,481.508,210.336z"/>
-        </svg>
-                    </button>
-                  </div>
-                </div>
+                <input
+                  type="text"
+                  value={input}
+                  onChange={e => setInput(e.target.value)}
+                  placeholder="Speak to Marshmallow"
+                  className="send-input"
+                />
+                <button type="submit" className="send">Send</button>
               </div>
-              {result !== null && <div className="chat-message">{result}</div>}
-              
-
+              {result && <div className="chat-message">{result}</div>}
             </form>
           </div>
         </div>
       </div>
-    
+    </div>
   );
 };
+
 
 export default Fetch;
 

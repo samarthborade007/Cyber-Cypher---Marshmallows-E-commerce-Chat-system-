@@ -1,378 +1,406 @@
 
 
-.app {
-    display: flex;
-    background-color: #1e1f22;
-    height: 800px;
-    width: 1400px;
-    flex-direction: row;
-    
-    border-radius: 25px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* horizontal-offset vertical-offset blur-radius spread-radius color */
 
-    
+
+.app {
+  display: flex;
+  background-color: #1e1f22;
+  height: 800px;
+  width: 1400px;
+  flex-direction: row;
+  border-radius: 25px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* horizontal-offset vertical-offset blur-radius spread-radius color */
+
+
+ 
 }
 .mainblock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    /*background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%); */
-    background-color: #49505bc9; 
-    background-size: 60px 60px;
-    background-position: -5px -5px;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /*background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%); */
+  background-color: #49505bc9;
+  background-size: 60px 60px;
+  background-position: -5px -5px;
+
+}
+.innerchat{
+  width: 75%;
+background-color: #2b2d31;
+overflow-y: auto;
+margin-left: auto;
+margin-right: 20px; /* change to auto if you want middle display xd */
+margin-top: 20px;
+margin-bottom: 20px;
+border-radius: 20px;
+max-height: 800px;
+}
+.input-container{
+  margin-top: 550px;
+  position: fixed;
+  color: #ffffff;
+
+
+}
+.responsebox{
+  background-color: #0073b100;
+}
+.sender-area {
+  background-color: #34354100;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  border-radius: 8px;
+}
+.send-input {
+  outline: none;
+  display: flex;
+  border: none;
+  background: none;
+  height: 40px;
+  width: 100%;
+  border-radius: 7px;
+  background: none;
+  color: white;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+.send-img {
+  width: 30px;
+}
+.send-input::placeholder {
+  color: #ffffff;
+}
+.input-place {
+  display: flex;
+  flex-direction: row;
+  margin-top: -600px;
+  margin-left: 135px;
+  align-items: center;
+  background-color: #424141;
+  border-radius: 7px;
+  height: 40px;
+  width: 800px;
+  gap: 5px;
+  border: 1px solid #2E2F3A;
+}
+.send {
+  width: 30px;
+  height: 30px;
+  background-color: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: flex-end;
+ 
+}
+
+
+.agentdisplay {
+  color: aliceblue;
+
+
+}
+.agentdisplay {
+  display: flex;
+  align-items: center; /* Align items vertically in the center */
+  background-color: #2b2d31; /* Background color of the agent display */
+  padding: 10px; /* Or any other value for spacing inside the agent display */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px;
+  border-bottom: 2px solid #1e1f22; /* Blue border at the bottom */
+  position: sticky;
+
+
+}
+
+.logoicon {
+  /* Adjust the size as needed */
+  width: 50px; /* Width of the logo container */
+  height: 50px; /* Height of the logo container */
+  margin-right: 10px; /* Add some space between the logo and the text */
+  border-radius: 50%; /* Makes the image round */
+  overflow: hidden; /* Ensures the image doesn't overflow the rounded corners */
+}
+
+.logoicon img {
+  width: 100%; /* Ensure the image covers the logoicon area */
+  height: auto; /* Maintain the aspect ratio */
+}
+
+.agent-info h2 {
+  margin: 0;
+  font-size: 1.25rem; /* Adjust the size as needed */
+  color: #ffffff; /* Text color */
+}
+
+.agent-info p {
+  margin: 0;
+  color: #a9a9a9; /* Text color for the username */
+  font-size: 0.875rem; /* Adjust the size as needed */
+}
+
+/* Further styling to match the layout */
+.agent-info {
+  display: flex;
+  flex-direction: column;
+}
+.chatcontainer {
+  flex-grow: 1;
+  border: 1px solid rgba(255, 255, 255, 0); /* Replace with your desired border color */
+  overflow-y: auto; /* Enable scrolling for overflow content */
+  background-color: rgba(204, 188, 188, 0); /* Replace with your desired background color */
+  margin: 20px; /* Adjust the margin as needed */
+  height: calc(100% - 170px); /* Adjust height as needed, subtracting double the margin */
+  width: calc(100% - 40px); /* Adjust width as needed, subtracting double the margin */
+  overflow-y: auto; /* Allows for scrolling within the container if content overflows */
+  box-sizing: border-box; /* Ensures padding and border are included in width/height calculation */
+}
+.chat-message {
+  margin: 10px;
+  top: 30px;
+  margin-top: -40px !important; /* Adjust value as needed */
+position: relative;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1e1f22; /* Dark background color */
+  color: #fffdfdaa; /* Light text color */
+  max-width: 80%; /* Max width to avoid overly wide messages */
+  word-wrap: break-word; /* Ensure long words do not overflow */
+  display: inline-block; /* Adjusts width based on content up to max-width */
+}
+.square {
+  background: #ddd;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
+}
+
+#sq1 {
+  margin-top: -25px;
+  margin-left: -25px;
+  animation: loader_5191 675ms ease-in-out 0s infinite alternate;
+}
+
+#sq2 {
+  margin-top: -25px;
+  animation: loader_5191 675ms ease-in-out 75ms infinite alternate;
+}
+
+#sq3 {
+  margin-top: -25px;
+  margin-left: 15px;
+  animation: loader_5191 675ms ease-in-out 150ms infinite;
+}
+
+#sq4 {
+  margin-left: -25px;
+  animation: loader_5191 675ms ease-in-out 225ms infinite;
+}
+
+#sq5 {
+  animation: loader_5191 675ms ease-in-out 300ms infinite;
+}
+
+#sq6 {
+  margin-left: 15px;
+  animation: loader_5191 675ms ease-in-out 375ms infinite;
+}
+
+#sq7 {
+  margin-top: 15px;
+  margin-left: -25px;
+  animation: loader_5191 675ms ease-in-out 450ms infinite;
+}
+
+#sq8 {
+  margin-top: 15px;
+  animation: loader_5191 675ms ease-in-out 525ms infinite;
+}
+
+#sq9 {
+  margin-top: 15px;
+  margin-left: 15px;
+  animation: loader_5191 675ms ease-in-out 600ms infinite;
+}
+
+
+
+@keyframes square-animation {
+  0% {
+   left: 0;
+   top: 0;
   }
-  .innerchat{
-    width: 75%; 
-  background-color: #2b2d31; 
-  overflow-y: auto; 
-  margin-left: auto;
-  margin-right: 20px; /* change to auto if you want middle display xd */
+ 
+  10.5% {
+   left: 0;
+   top: 0;
+  }
+ 
+  12.5% {
+   left: 32px;
+   top: 0;
+  }
+ 
+  23% {
+   left: 32px;
+   top: 0;
+  }
+ 
+  25% {
+   left: 64px;
+   top: 0;
+  }
+ 
+  35.5% {
+   left: 64px;
+   top: 0;
+  }
+ 
+  37.5% {
+   left: 64px;
+   top: 32px;
+  }
+ 
+  48% {
+   left: 64px;
+   top: 32px;
+  }
+ 
+  50% {
+   left: 32px;
+   top: 32px;
+  }
+ 
+  60.5% {
+   left: 32px;
+   top: 32px;
+  }
+ 
+  62.5% {
+   left: 32px;
+   top: 64px;
+  }
+ 
+  73% {
+   left: 32px;
+   top: 64px;
+  }
+ 
+  75% {
+   left: 0;
+   top: 64px;
+  }
+ 
+  85.5% {
+   left: 0;
+   top: 64px;
+  }
+ 
+  87.5% {
+   left: 0;
+   top: 32px;
+  }
+ 
+  98% {
+   left: 0;
+   top: 32px;
+  }
+ 
+  100% {
+   left: 0;
+   top: 0;
+  }
+ }
+ 
+ .loader {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  transform: rotate(45deg);
+ }
+ 
+ .loader-square {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  margin: 2px;
+  border-radius: 0px;
+  background: white;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  animation: square-animation 10s ease-in-out infinite both;
+ }
+ 
+ .loader-square:nth-of-type(0) {
+  animation-delay: 0s;
+ }
+ 
+ .loader-square:nth-of-type(1) {
+  animation-delay: -1.4285714286s;
+ }
+ 
+ .loader-square:nth-of-type(2) {
+  animation-delay: -2.8571428571s;
+ }
+ 
+ .loader-square:nth-of-type(3) {
+  animation-delay: -4.2857142857s;
+ }
+ 
+ .loader-square:nth-of-type(4) {
+  animation-delay: -5.7142857143s;
+ }
+ 
+ .loader-square:nth-of-type(5) {
+  animation-delay: -7.1428571429s;
+ }
+ 
+ .loader-square:nth-of-type(6) {
+  animation-delay: -8.5714285714s;
+ }
+ 
+ .loader-square:nth-of-type(7) {
+  animation-delay: -10s;
+ }
+ .initial-message{
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #1e1f22; /* Dark background color */
+  color: #fffdfdaa; /* Light text color */
+  max-width: 80%; /* Max width to avoid overly wide messages */
+  word-wrap: break-word; /* Ensure long words do not overflow */
+  display: inline-block;
+ }
+ .anime {
+  margin-left: 30px;
   margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  max-height: 800px;
-  }
-  .input-container{
-    margin-top: 580px;
-    position: fixed;
-    color: #ffffff;
-  
-  }
-  .responsebox{
-    background-color: #0073b100;
-  }
-  .sender-area {
-    background-color: #34354100;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    border-radius: 8px;
-  }
-  .send-input {
-    outline: none;
-    display: flex;
-    border: none;
-    background: none;
-    height: 40px;
-    width: 100%;
-    border-radius: 7px;
-    background: none;
-    color: white;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  
-  }
-  .send-img {
-    width: 30px;
-  }
-  .send-input::placeholder {
-    color: #ffffff;
-  }
-  .input-place {
-    display: flex;
-    flex-direction: row;
-    margin-top: -600px;
-    margin-left: 135px;
-    align-items: center;
-    background-color: #424141;
-    border-radius: 7px;
-    height: 40px;
-    width: 800px;
-    gap: 5px;
-    border: 1px solid #2E2F3A;
-  }
-  .send {
-    width: 30px;
-    height: 30px;
-    background-color: none;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    justify-content: flex-end;
-    
-  }
+ }
+ .icon-size{
+  font-size: 60px;
+  color: #ffffff38;
+  margin-top: 730px;
+ 
+ }
+ .circle {
+  font-size: 40px; /* Your existing font size */
+  position: fixed; /* Use fixed or absolute positioning */
+  top: -10; /* Align to the top of the viewport */
+  right: 0; /* Align to the right of the viewport */
+  margin-right: 150px; /* Optional: Adds some spacing from the right edge */
+  margin-top: 10px; /* Optional: Adds some spacing from the top edge */
+}
 
-  .agentdisplay {
-    color: aliceblue;
 
-  }
-  .agentdisplay {
-    display: flex;
-    align-items: center; /* Align items vertically in the center */
-    background-color: #2b2d31; /* Background color of the agent display */
-    padding: 10px; /* Or any other value for spacing inside the agent display */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px;
-    border-bottom: 2px solid #1e1f22; /* Blue border at the bottom */
-    position: sticky;
-
-  }
-  
-  .logoicon {
-    /* Adjust the size as needed */
-    width: 50px; /* Width of the logo container */
-    height: 50px; /* Height of the logo container */
-    margin-right: 10px; /* Add some space between the logo and the text */
-    border-radius: 50%; /* Makes the image round */
-    overflow: hidden; /* Ensures the image doesn't overflow the rounded corners */
-  }
-  
-  .logoicon img {
-    width: 100%; /* Ensure the image covers the logoicon area */
-    height: auto; /* Maintain the aspect ratio */
-  }
-  
-  .agent-info h2 {
-    margin: 0;
-    font-size: 1.25rem; /* Adjust the size as needed */
-    color: #ffffff; /* Text color */
-  }
-  
-  .agent-info p {
-    margin: 0;
-    color: #a9a9a9; /* Text color for the username */
-    font-size: 0.875rem; /* Adjust the size as needed */
-  }
-  
-  /* Further styling to match the layout */
-  .agent-info {
-    display: flex;
-    flex-direction: column;
-  }
-  .chatcontainer {
-    flex-grow: 1;
-    border: 1px solid rgba(255, 255, 255, 0); /* Replace with your desired border color */
-    overflow-y: auto; /* Enable scrolling for overflow content */
-    background-color: rgba(204, 188, 188, 0); /* Replace with your desired background color */
-    margin: 20px; /* Adjust the margin as needed */
-    height: calc(100% - 170px); /* Adjust height as needed, subtracting double the margin */
-    width: calc(100% - 40px); /* Adjust width as needed, subtracting double the margin */
-    overflow-y: auto; /* Allows for scrolling within the container if content overflows */
-    box-sizing: border-box; /* Ensures padding and border are included in width/height calculation */
-  }
-  .chat-message {
-    margin: 10px;
-    margin-top: -500px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #1e1f22; /* Dark background color */
-    color: #fffdfdaa; /* Light text color */
-    max-width: 80%; /* Max width to avoid overly wide messages */
-    word-wrap: break-word; /* Ensure long words do not overflow */
-    display: inline-block; /* Adjusts width based on content up to max-width */
-  }
-  .square {
-    background: #ddd;
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -5px;
-    margin-left: -5px;
-  }
-  
-  #sq1 {
-    margin-top: -25px;
-    margin-left: -25px;
-    animation: loader_5191 675ms ease-in-out 0s infinite alternate;
-  }
-  
-  #sq2 {
-    margin-top: -25px;
-    animation: loader_5191 675ms ease-in-out 75ms infinite alternate;
-  }
-  
-  #sq3 {
-    margin-top: -25px;
-    margin-left: 15px;
-    animation: loader_5191 675ms ease-in-out 150ms infinite;
-  }
-  
-  #sq4 {
-    margin-left: -25px;
-    animation: loader_5191 675ms ease-in-out 225ms infinite;
-  }
-  
-  #sq5 {
-    animation: loader_5191 675ms ease-in-out 300ms infinite;
-  }
-  
-  #sq6 {
-    margin-left: 15px;
-    animation: loader_5191 675ms ease-in-out 375ms infinite;
-  }
-  
-  #sq7 {
-    margin-top: 15px;
-    margin-left: -25px;
-    animation: loader_5191 675ms ease-in-out 450ms infinite;
-  }
-  
-  #sq8 {
-    margin-top: 15px;
-    animation: loader_5191 675ms ease-in-out 525ms infinite;
-  }
-  
-  #sq9 {
-    margin-top: 15px;
-    margin-left: 15px;
-    animation: loader_5191 675ms ease-in-out 600ms infinite;
-  }
-  
-  
-  
-  @keyframes square-animation {
-    0% {
-     left: 0;
-     top: 0;
-    }
-   
-    10.5% {
-     left: 0;
-     top: 0;
-    }
-   
-    12.5% {
-     left: 32px;
-     top: 0;
-    }
-   
-    23% {
-     left: 32px;
-     top: 0;
-    }
-   
-    25% {
-     left: 64px;
-     top: 0;
-    }
-   
-    35.5% {
-     left: 64px;
-     top: 0;
-    }
-   
-    37.5% {
-     left: 64px;
-     top: 32px;
-    }
-   
-    48% {
-     left: 64px;
-     top: 32px;
-    }
-   
-    50% {
-     left: 32px;
-     top: 32px;
-    }
-   
-    60.5% {
-     left: 32px;
-     top: 32px;
-    }
-   
-    62.5% {
-     left: 32px;
-     top: 64px;
-    }
-   
-    73% {
-     left: 32px;
-     top: 64px;
-    }
-   
-    75% {
-     left: 0;
-     top: 64px;
-    }
-   
-    85.5% {
-     left: 0;
-     top: 64px;
-    }
-   
-    87.5% {
-     left: 0;
-     top: 32px;
-    }
-   
-    98% {
-     left: 0;
-     top: 32px;
-    }
-   
-    100% {
-     left: 0;
-     top: 0;
-    }
-   }
-   
-   .loader {
-    position: relative;
-    width: 96px;
-    height: 96px;
-    transform: rotate(45deg);
-   }
-   
-   .loader-square {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 28px;
-    height: 28px;
-    margin: 2px;
-    border-radius: 0px;
-    background: white;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    animation: square-animation 10s ease-in-out infinite both;
-   }
-   
-   .loader-square:nth-of-type(0) {
-    animation-delay: 0s;
-   }
-   
-   .loader-square:nth-of-type(1) {
-    animation-delay: -1.4285714286s;
-   }
-   
-   .loader-square:nth-of-type(2) {
-    animation-delay: -2.8571428571s;
-   }
-   
-   .loader-square:nth-of-type(3) {
-    animation-delay: -4.2857142857s;
-   }
-   
-   .loader-square:nth-of-type(4) {
-    animation-delay: -5.7142857143s;
-   }
-   
-   .loader-square:nth-of-type(5) {
-    animation-delay: -7.1428571429s;
-   }
-   
-   .loader-square:nth-of-type(6) {
-    animation-delay: -8.5714285714s;
-   }
-   
-   .loader-square:nth-of-type(7) {
-    animation-delay: -10s;
-   }
-   .initial-message{
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #1e1f22; /* Dark background color */
-    color: #fffdfdaa; /* Light text color */
-    max-width: 80%; /* Max width to avoid overly wide messages */
-    word-wrap: break-word; /* Ensure long words do not overflow */
-    display: inline-block;
-   }
